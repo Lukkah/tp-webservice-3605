@@ -1,0 +1,14 @@
+<div class="row col-md-9">
+    <h1 class="text-lg-center col-12">ÚLTIMAS NOTICIAS</h1>
+    <div class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4 col-md-6" *ngFor="let item of noticiasVector">
+            <div class="card">
+                <img src="{{item.img}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h6 class="card-title">{{item.tit}}</h6>
+                        <p class="card-text">{{item.des}}</p>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

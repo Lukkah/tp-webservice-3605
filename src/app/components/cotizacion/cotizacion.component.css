@@ -1,0 +1,35 @@
+
+form{
+    margin-left: 0px;
+}
+form h3{
+    padding-right: 0px;
+    text-align: center;
+    border-bottom: solid;
+    background-color: rgba(9, 9, 75, 0.445);
+    color: white;
+}
+div form{
+    border-right-style: solid;
+    border-left-style: solid;
+    padding-right: 0px;
+}
+
+#conv{
+    margin: 0px;
+    padding:0px;
+}
+.form-group{
+    margin-top: 10px;
+    padding-left:20px;
+    padding-right: 20px;
+}
+label{
+    color: white;
+}
+
+#lblCot{
+    width: 100%;
+    border-radius: 5px;
+    background-color: cadetblue;
+}

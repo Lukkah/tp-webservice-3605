@@ -1,0 +1,67 @@
+<div>
+    <div class="row">
+    <div class="col-md-8 col-sm-12">
+        <h2 class="col-12 text-lg-center">Conversor de divisas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col"><img src="" class="icon"><br>USD</th>
+                    <th scope="col"><img src="" class="icon"><br>ARS</th>
+                    <th scope="col"><img src="" class="icon"><br>EUR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1 USD<br>Inverse</th>
+                    <td>{{cotizacionesPaises[0].result}}<br>{{cotizacionesPaises[0].result}}</td>
+                    <td>{{cotizacionesPaises[1].result}}<br>{{cotizacionesPaises[3].result}}</td>
+                    <td>{{cotizacionesPaises[2].result}}<br>{{cotizacionesPaises[6].result}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">2 ARS<br>Inverse</th>
+                    <td>{{cotizacionesPaises[3].result}}<br>{{cotizacionesPaises[1].result}}</td>
+                    <td>{{cotizacionesPaises[4].result}}<br>{{cotizacionesPaises[4].result}}</td>
+                    <td>{{cotizacionesPaises[5].result}}<br>{{cotizacionesPaises[7].result}}</td>
+                </tr>
+                <tr>
+                    <th scope="row">3 EUR<br>Inverse</th>
+                    <td>{{cotizacionesPaises[6].result}}<br>{{cotizacionesPaises[2].result}}</td>
+                    <td>{{cotizacionesPaises[7].result}}<br>{{cotizacionesPaises[5].result}}</td>
+                    <td>{{cotizacionesPaises[8].result}}<br>{{cotizacionesPaises[8].result}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="col-md-4 col-sm-12"  id="conv">
+        <form>
+            <h3>Conversor De Divisas</h3>
+            <div class="form-group">
+                <label for="impCant">Cantidad</label>
+                <input class="form-control" type="number" id="impCant" name="impCant" placeholder="Cantidad" [(ngModel)] = "cant"/>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">De</label>
+                <select class="custom-select" name="selFrom" id="selFrom" [(ngModel)]="from">
+                    <option value="USD" selected>USD Dólares EEUU</option>
+                    <option value="ARS">ARS Pesos Argentinos</option>
+                    <option value="EUR">EUR Euro Español</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">A</label>
+                <select class="custom-select" name="selTo" id="selTo" [(ngModel)]="to">
+                   <option value="USD" selected>USD Dólares EEUU</option>
+                    <option value="ARS">ARS Pesos Argentinos</option>
+                    <option value="EUR">EUR Euro Español</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label id="lblCot">{{cotizacion.result}}.</label>
+            </div>
+            <button id="btt" type="button" class="btn btn-warning "style="display: block; margin: 0 auto;" (click)="cargarCotizacion()">Convertir</button>
+        </form>
+    </div>
+</div>
+</div>
