@@ -12,6 +12,7 @@ import { HoroscopoComponent } from './components/horoscopo/horoscopo.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { CoronaVirusComponent } from './components/corona-virus/corona-virus.component';
+import { PoblacionComponent } from './components/poblacion/poblacion.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { CoronaVirusComponent } from './components/corona-virus/corona-virus.com
     CotizacionComponent,
     HoroscopoComponent,
     CoronaVirusComponent,
+    PoblacionComponent,
   ],
   imports: [
     BrowserModule,

@@ -9,12 +9,15 @@ import { HoroscopoSerService } from 'src/app/services/horoscopo-ser.service';
 })
 export class HoroscopoComponent implements OnInit {
 
+  arreglo:Array<any>;
+  horoscopoDia:HoroscopoClase;
   horoscopo:HoroscopoClase;
   signos:Array<any>;
   constructor(private horoscopoSercice:HoroscopoSerService) { 
     this.horoscopo=new HoroscopoClase();
     this.signos=new Array<any>();
     this.cargarHoroscopo();
+    this.cargarHoroscopoDia();
   }
 
   ngOnInit(): void {
@@ -22,16 +25,28 @@ export class HoroscopoComponent implements OnInit {
 
 
   public cargarHoroscopo(){
-    for(var i=0;i<11;i++){
+
       this.horoscopoSercice.listHoroscopo().subscribe(
         (result) => {
           this.signos = new Array<any>();
-          this.signos.push(result["name"]);
+          this.signos=result;
           console.log(this.signos);
         },
         error => { alert("Error en la peticion de horoscopo");}
       )
-    }
   }
 
+
+
+  public cargarHoroscopoDia(){
+    this.horoscopoSercice.cargarHoroscopo().subscribe(  
+      (result) => {
+        console.log(result);
+        this.horoscopoDia=new HoroscopoClase();
+        this.arreglo = new Array <any>();
+        this.arreglo.push(result['sign']);
+        this.arreglo.push(result['result']);
+      }
+    )
+  }
 }

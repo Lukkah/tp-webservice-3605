@@ -5,6 +5,7 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { CotizacionComponent } from './components/cotizacion/cotizacion.component';
 import { HoroscopoComponent } from './components/horoscopo/horoscopo.component';
 import { CoronaVirusComponent } from './components/corona-virus/corona-virus.component';
+import { PoblacionComponent } from './components/poblacion/poblacion.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: 'cotizacion', component:CotizacionComponent},
   {path: 'horoscopo', component:HoroscopoComponent},
   {path: 'covid', component:CoronaVirusComponent},
+  {path: 'poblacion', component:PoblacionComponent},
 ];
 
 @NgModule({

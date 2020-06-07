@@ -21,7 +21,6 @@ export class CotizacionComponent implements OnInit {
   constructor(private cotizacionService:CotizacionSerService) {
     this.cotizacion=new CotizacionClase();
     this.cargarListaCotizacion();
-    this.cotizacionesPaises=new Array<CotizacionClase>();
     this.cant="1";
    }
 
@@ -42,22 +41,20 @@ export class CotizacionComponent implements OnInit {
   
   public cargarListaCotizacion(){
     this.cotizacionesPaises=new Array<CotizacionClase>();
-    for(var i=0;i<3;i++){
-      for(var j=0;j<3;j++){
-        this.cotizacionService.cotizaciones(this.arreglo[i],this.arreglo[j],"1").subscribe(
+    this.arreglo.forEach(element1 =>{
+      this.arreglo.forEach(element2 =>{
+        this.cotizacionService.getCotizaciones(element1,element2,"1").subscribe(
           (result) => {
               this.cotizacion = new CotizacionClase();
-              Object.assign(this.cotizacion,result);
+              this.cotizacion.result=result;
+              this.cotizacion.from_type=element1;
+              this.cotizacion.to_type=element2;
               this.cotizacionesPaises.push(this.cotizacion);
-              
-              console.log(this.cotizacion);
           },
-          error => { alert("No se pudo convertir las monedas");}
+          error => { alert("No se pudo convertir las monedas");}    
         )
-      }
-    }  
+      })
+    })
   }
-  
-
 
 }
