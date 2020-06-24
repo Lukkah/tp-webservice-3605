@@ -14,8 +14,11 @@ export class NoticiaService {
       headers: new HttpHeaders({
         'x-rapidapi-host': 'livescore6.p.rapidapi.com',
 	      'x-rapidapi-key': 'b44d370371msh0c28e6954b075efp1c516djsn13ee485d9f01',
-      })
+      }),
+      param:{
+        'category':categoria,
+      }
     };
-    return this._http.get("https://livescore6.p.rapidapi.com/news/list?category="+categoria,httpOptions);
+    return this._http.get("https://livescore6.p.rapidapi.com/news/list",httpOptions);
   }
 }
